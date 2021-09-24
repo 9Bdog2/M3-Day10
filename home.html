@@ -141,12 +141,7 @@
                     <h3 style="color: white; font-weight: 500;" >Drama</h3>
                 </div>  
   
-              <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-                 <img class="img-fluid"src="movies/2-4.jpg" alt="">
-                 <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-                </div>
-                <!--  -->
+              <div id="drama" class="row">
                 
               </div>
               <!-- END OF WATCH IT NOW section -->
@@ -155,12 +150,8 @@
                 <h3 style="color: white; font-weight: 500;" >Comedy</h3>
             </div>  
 
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-             <img class="img-fluid"src="movies/2-3.jpg" alt="">
-             <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-            </div>
-            <!--  -->
+          <div id="comedy" class="row">
+            
             
           </div>
           <!-- end of the Grid -->
@@ -202,15 +193,45 @@
           
           data.forEach(event => {
           element.innerHTML = `
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-            <img class="img-fluid"src="${event.imageUrl}" alt=""> 
-            <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-          </div> `
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
+              <img class="img-fluid"src="${event.imageUrl}" alt=""> 
+              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
+            </div> `
+            row.appendChild(element);
         })
-             row.appendChild(element);
           }
 
-      const url = async () => {
+          function createElementDrama(data) {
+          let row = document.getElementById("drama");
+          let element = document.createElement("div");
+          
+          
+          data.forEach(event => {
+          element.innerHTML = `
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
+              <img class="img-fluid"src="${event.imageUrl}" alt=""> 
+              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
+            </div> `
+            row.appendChild(element);
+        })
+          }
+
+          function createElementComedy(data) {
+          let row = document.getElementById("drama");
+          let element = document.createElement("div");
+          
+          
+          data.forEach(event => {
+          element.innerHTML = `
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
+              <img class="img-fluid"src="${event.imageUrl}" alt=""> 
+              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
+            </div> `
+            row.appendChild(element);
+        })
+          }
+
+      const urlHorror = async () => {
         const response = await fetch(
           "https://striveschool-api.herokuapp.com/api/movies/horror",
           {
@@ -225,10 +246,41 @@
         createElement(responseJson);
       };
 
+      const urlDrama = async () => {
+        const response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/movies/drama",
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWRlMDRiYjUzZDAwMTViMTllZDEiLCJpYXQiOjE2MzIzMTI4MDAsImV4cCI6MTYzMzUyMjQwMH0.ZEiTPl6hBe2UEm5T239Bdd_a6OldaCdb8ShgjSK-vsI",
+            },
+          }
+        );
+        const responseJson = await response.json();
+        console.log(responseJson);
+        createElementDrama(responseJson)
+      }
+
+      const urlComedy = async () => {
+        const response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/movies/comedy",
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMWRlMDRiYjUzZDAwMTViMTllZDEiLCJpYXQiOjE2MzIzMTI4MDAsImV4cCI6MTYzMzUyMjQwMH0.ZEiTPl6hBe2UEm5T239Bdd_a6OldaCdb8ShgjSK-vsI",
+            },
+          }
+        );
+        const responseJson = await response.json();
+        console.log(responseJson);
+        createElementComedy(responseJson)
+      }
+
       window.onload = async () => {
-        url();
-        
-          
+        urlHorror();
+        urlDrama();
+        urlComedy();  
+
       };
 
 
