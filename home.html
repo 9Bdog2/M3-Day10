@@ -11,7 +11,7 @@
     <title>Netflix Home</title>
     <style>
         body {
-  background-color: #020202;
+          background-color: #020202;
            }
            .bg-netflix-dark{
             background-color: #020202;
@@ -41,9 +41,6 @@
         width: 30%;
         height: 21%
     }
- 
-
-
     </style>
   </head>
   <body>
@@ -72,6 +69,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">My List</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./backoffice.html">Back Office</a>
+              </li>
             </ul>
               <!-- end of left side of nav bar -->
 
@@ -91,24 +91,15 @@
                   <a href="/profile.html"> <img src="strive-logo.png" width="32" height="32" class="mr-1" /></a>
                     <a style=" color: white;" class="btn nav-btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
-                      
-                     
-                   
-
-                   
                 </div>
             </div>
-
-               
-  
-           
           </div>
         </nav>
 
         <!--  -->
         <div class="d-flex">
             
-            <h2 style="color: white; font-weight: 700;">TV Shows</h2>
+            <h2 style="color: white; font-weight: 700;">Movies</h2>
             <div class="dropdown mr-1">
                 <!--  -->
               
@@ -147,7 +138,7 @@
             <!-- end of Trending Now Section -->
              
                 <div class="section-title mt-5 mb-2">
-                    <h3 style="color: white; font-weight: 500;" >Watch It Again</h3>
+                    <h3 style="color: white; font-weight: 500;" >Drama</h3>
                 </div>  
   
               <div class="row">
@@ -156,35 +147,12 @@
                  <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
                 </div>
                 <!--  -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-                  <img class="img-fluid" src="movies/2-3.jpg" alt="">
-                  <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-                 </div>
-                <!--  -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-                  <img class="img-fluid" src="movies/2-2.jpg" alt="">
-                  <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-                 </div>
-                 <!--  -->
-                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-                  <img class="img-fluid" src="movies/2-1.jpg" alt="">
-                  <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-                 </div>
-                 <!--  -->
-                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-                  <img class="img-fluid" src="movies/1-4.jpg" alt="">
-                  <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-                 </div>
-                 <!--  -->
-                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-                  <img class="img-fluid" src="movies/1-3.jpg" alt="">
-                  <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-                 </div>
+                
               </div>
               <!-- END OF WATCH IT NOW section -->
               
               <div class="section-title mt-5 mb-2">
-                <h3 style="color: white; font-weight: 500;" >New Release</h3>
+                <h3 style="color: white; font-weight: 500;" >Comedy</h3>
             </div>  
 
           <div class="row">
@@ -193,30 +161,7 @@
              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
             </div>
             <!--  -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-              <img class="img-fluid" src="movies/1-2.jpg" alt="">
-              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-             </div>
-            <!--  -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-              <img class="img-fluid" src="movies/3-1.jpg" alt="">
-              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-             </div>
-             <!--  -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-              <img class="img-fluid" src="movies/2-1.jpg" alt="">
-              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-             </div>
-             <!--  -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-              <img class="img-fluid" src="movies/2-4.jpg" alt="">
-              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-             </div>
-             <!--  -->
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
-              <img class="img-fluid" src="movies/1-1.jpg" alt="">
-              <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-             </div>
+            
           </div>
           <!-- end of the Grid -->
           
@@ -260,7 +205,6 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1">
             <img class="img-fluid"src="${event.imageUrl}" alt=""> 
             <img src="/Netflix_Logo_RGB.png" class="netflix-badge" />
-            <span>${event.name}</span>
           </div> `
         })
              row.appendChild(element);
